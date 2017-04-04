@@ -117,8 +117,7 @@ if global.health &lt;= 0 {
           <argument>
             <kind>1</kind>
             <string>///All Knockback
-if place_meeting(x,y-vsp,obj_shroom) {
-    canHurt = false
+if place_meeting(x,y+1,obj_shroom) {
     vsp -= 5
 }
 </string>

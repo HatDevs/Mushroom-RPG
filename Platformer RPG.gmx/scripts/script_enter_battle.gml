@@ -4,4 +4,4 @@ switch(room_chance) {
     case 1: room_goto(wasp_room)
     case 2: room_goto(golem_room)
 }*/
-room_goto(test_room)
+room_goto(mushroom1_room)

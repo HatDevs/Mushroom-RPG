@@ -39,7 +39,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>
-    <room>rooms\mushroom_1_room</room>
     <room>rooms\wasp_room</room>
     <room>rooms\golem_room</room>
     <room>rooms\mushroom1_room</room>

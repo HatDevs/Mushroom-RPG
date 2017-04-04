@@ -28,7 +28,7 @@
             <string>script_physics()
 moveSpeed = 5
 jumpSpeed = -7.5
-shroomDmg = 3
+bullet_damage = 35
 </string>
           </argument>
         </arguments>

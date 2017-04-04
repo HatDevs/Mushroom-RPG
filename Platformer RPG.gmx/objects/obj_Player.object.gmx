@@ -145,6 +145,7 @@ if PlayerStats_obj.Health &lt;= 0 {
             <kind>1</kind>
             <string>draw_self()
 draw_text(x, y - 20, "Health: " + string(PlayerStats_obj.Health))
+            <string>///All Knockback
 </string>
           </argument>
         </arguments>

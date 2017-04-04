@@ -170,9 +170,6 @@
     <instance objName="obj_solid" x="1504" y="1024" name="inst_EB32266C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1504" y="1056" name="inst_3B94396C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1504" y="1088" name="inst_D6D11F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="928" y="1536" name="inst_6069C34C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="1280" y="1408" name="inst_C9358E90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="1376" y="992" name="inst_422CEC63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1184" y="832" name="inst_CB0B91A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1184" y="800" name="inst_486FA135" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1184" y="768" name="inst_4CD68698" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -315,10 +312,6 @@
     <instance objName="obj_solid" x="1728" y="992" name="inst_606D6D21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1760" y="992" name="inst_B2E800F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1760" y="1024" name="inst_BAF66D66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="1248" y="608" name="inst_BB5B3E3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="1184" y="224" name="inst_1FECC12C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="1600" y="544" name="inst_C3EA8618" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="healthpotion_obj" x="1600" y="1024" name="inst_78E55905" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1760" y="1056" name="inst_BBE4309E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1760" y="1088" name="inst_52BCC5B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1760" y="1120" name="inst_2FD18019" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -357,6 +350,9 @@
     <instance objName="obj_solid" x="1216" y="320" name="inst_884450CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1472" y="1568" name="inst_45A72A63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="shop_obj" x="1120" y="928" name="inst_49AC6CA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="shop_obj" x="960" y="1728" name="inst_968C52FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Inventory_obj" x="0" y="2016" name="inst_3FE0483F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="PlayerStats_obj" x="32" y="2016" name="inst_47327063" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_bgr" x="1120" y="1984" w="32" h="32" xo="0" yo="0" id="10000001" name="inst_8E330DF9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

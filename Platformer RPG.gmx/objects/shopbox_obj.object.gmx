@@ -90,8 +90,10 @@ buysomething = false
         &gt;Health Potion - 50g
         "
         if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)) {
-             if global.gold &gt;= 50 {
-                global.gold -= 50
+             if PlayerStats_obj.Gold &gt;= 50 {
+                PlayerStats_obj.Gold -= 50
+                ds_list_add(Inventory_obj.inventory, Item.HealthPotion);
+                Inventory_obj.count++
                 state = ShopTextState.ThankYouMessage
              } else {
                 state = ShopTextState.NotEnoughMoney

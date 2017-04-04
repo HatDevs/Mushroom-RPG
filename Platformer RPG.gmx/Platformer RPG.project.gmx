@@ -14,6 +14,7 @@
     <sprite>sprites\mushroom_spr</sprite>
     <sprite>sprites\shop_spr</sprite>
     <sprite>sprites\textbox_spr</sprite>
+    <sprite>sprites\PlayerMenu_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>
@@ -36,6 +37,10 @@
     <object>objects\shop_obj</object>
     <object>objects\shopbox_obj</object>
     <object>objects\enemy_obj</object>
+    <object>objects\Inventory_obj</object>
+    <object>objects\PlayerMenu_obj</object>
+    <object>objects\PlayerStats_obj</object>
+    <object>objects\PlayerLastPlace_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>

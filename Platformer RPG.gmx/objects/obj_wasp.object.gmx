@@ -29,6 +29,7 @@
 vsp = 0
 Health = 100
 canHurt = true
+canMeet = true
 Damage = 25
 </string>
           </argument>
@@ -114,39 +115,41 @@ if place_meeting(x, y, obj_bullet)
             <kind>1</kind>
             <string>///Damage to Player
 if canHurt {
-    if(place_meeting(x + 1,y,obj_Player)){
-            global.health -= Damage;
-            canHurt = false;
-        }
-    if(place_meeting(x - 1,y,obj_Player)){
-            global.health -= Damage;
-            canHurt = false;
-        }
-    if(place_meeting(x,y + 1,obj_Player)){
-            global.health -= Damage;
-            canHurt = false;
-        }
-    if(place_meeting(x,y - 1,obj_Player)){
-            global.health -= Damage;
-            canHurt = false;
-        }
+    if place_meeting (x + sign(hsp), y + sign(vsp), obj_Player){
+        global.health -= Damage
+        canHurt = false
+    }
 }
 else {
     alarm[0] = room_speed
 }
 if alarm[0] &lt;= 0 {
-    canHurt = true
+    canMeet = true
     with obj_Player {
         enemyCollide = true
     }
 }
 else {
+    canMeet = false
     canHurt = false
     with obj_Player {
         enemyCollide = false
         canHurt = false
     }
 }
+    if(place_meeting(x + 1,y,obj_Player)) &amp;&amp; canMeet{
+            canHurt = true
+        }
+    if(place_meeting(x - 1,y,obj_Player)) &amp;&amp; canMeet{
+            canHurt = true
+        }
+    if(place_meeting(x,y + 1,obj_Player)) &amp;&amp; canMeet{
+            canHurt = true
+        }
+    if(place_meeting(x,y - 1,obj_Player)) &amp;&amp; canMeet{
+            canHurt = true
+        }
+
 </string>
           </argument>
         </arguments>

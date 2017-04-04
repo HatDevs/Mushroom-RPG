@@ -123,11 +123,13 @@ if global.health &lt;= 0 {
             <kind>1</kind>
             <string>///All Knockback
 if place_meeting(x,y+1,enemy_obj) {
+    
     with enemy_obj{
         if alarm[0] &gt; 0{
-            canHurt = true
+            canHurt = false
         }
     }
+    canHurt = true
     vsp -= 5
 }
 if canHurt = true {

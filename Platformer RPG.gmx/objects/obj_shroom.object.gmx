@@ -88,7 +88,7 @@ else{
 if place_meeting(x + hsp*7,y,obj_solid) &amp;&amp; canJump = true{
     vsp -= 10
 }
-if abs(abs(x) - abs(obj_Player.x)) &lt;= 1  {
+if abs(x - obj_Player.x) &lt;= 1  {
     //while x != obj_Player.x {
     //    x += sign(hsp)
     //}

@@ -13,6 +13,7 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\mushroom_spr</sprite>
     <sprite>sprites\shop_spr</sprite>
+    <sprite>sprites\textbox_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>
@@ -32,6 +33,7 @@
     <object>objects\obj_Player</object>
     <object>objects\obj_bullet</object>
     <object>objects\shop_obj</object>
+    <object>objects\shopbox_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>

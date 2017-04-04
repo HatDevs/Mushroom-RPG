@@ -42,7 +42,7 @@
     <room>rooms\mushroom_1_room</room>
     <room>rooms\wasp_room</room>
     <room>rooms\golem_room</room>
-    <room>rooms\test_room</room>
+    <room>rooms\mushroom1s_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

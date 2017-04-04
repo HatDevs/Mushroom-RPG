@@ -10,8 +10,9 @@
     <sprite>sprites\solid_spr</sprite>
     <sprite>sprites\healthpotion_spr</sprite>
     <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_shroom</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\mushroom_spr</sprite>
+    <sprite>sprites\shop_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>
@@ -30,6 +31,7 @@
     <object>objects\obj_Player</object>
     <object>objects\obj_shroom</object>
     <object>objects\obj_bullet</object>
+    <object>objects\shop_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>

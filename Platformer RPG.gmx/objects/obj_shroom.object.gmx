@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_solid</parentName>
+  <parentName>enemy_obj</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -74,9 +74,9 @@ shroomDmg = 25
             <kind>1</kind>
             <string>///collision
 GravityMovement()
-script_collision()
+
 if instance_exists(obj_Player) {
-    hsp = -sign(x - obj_Player.x) * 4
+    hsp = -sign(x - obj_Player.x) * 2
     
 }
 if place_meeting(x,y+1, obj_solid) {
@@ -86,12 +86,12 @@ else{
     canJump = false
 }
 if place_meeting(x + hsp*7,y,obj_solid) &amp;&amp; canJump = true{
-    vsp -= 7
+    vsp -= 10
 }
-if x + sign(hsp) = obj_Player.x || x + sign(hsp)*2 = obj_Player.x {
-    while x != obj_Player.x {
-        x += sign(hsp)
-    }
+if abs(abs(x) - abs(obj_Player.x)) &lt;= 1  {
+    //while x != obj_Player.x {
+    //    x += sign(hsp)
+    //}
     hsp = 0
 }
 //player collision
@@ -116,6 +116,9 @@ if(place_meeting(x+hsp, y+vsp, obj_Player)) {
     
     vsp = 0
 }
+if place_meeting(x, y, obj_bullet)
+    instance_destroy()
+script_collision()
 </string>
           </argument>
         </arguments>

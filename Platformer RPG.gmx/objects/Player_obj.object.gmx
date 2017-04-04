@@ -30,6 +30,7 @@ grav = 0
 movespeed = 2.5
 steps = 0
 global.health = 100
+global.gold = 100
 controllable = true
 randomize()
 </string>
@@ -73,12 +74,11 @@ vsp = movey
 if movex != 0 || movey != 0 {
     steps++
     if random_range(0, 100) &lt; 5 &amp;&amp; steps &gt;= 300 {
-        //script_enter_battle()
+        script_enter_battle()
         steps = 0
     }
         
 }
-
         
 script_collision()
 </string>

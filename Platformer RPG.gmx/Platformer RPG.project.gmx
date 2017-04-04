@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
+    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\solid_spr</sprite>
     <sprite>sprites\healthpotion_spr</sprite>
     <sprite>sprites\spr_bullet</sprite>
@@ -14,6 +15,7 @@
     <sprite>sprites\mushroom_spr</sprite>
     <sprite>sprites\shop_spr</sprite>
     <sprite>sprites\textbox_spr</sprite>
+    <sprite>sprites\spr_wasp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>
@@ -21,10 +23,12 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script_collision.gml</script>
+    <script>scripts\script_enemyCollide.gml</script>
     <script>scripts\script_physics.gml</script>
     <script>scripts\script_enter_battle.gml</script>
     <script>scripts\GravityMovement.gml</script>
     <script>scripts\TextboxLeave.gml</script>
+    <script>scripts\script_playerCollide.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Player_obj</object>
@@ -36,6 +40,7 @@
     <object>objects\shop_obj</object>
     <object>objects\shopbox_obj</object>
     <object>objects\enemy_obj</object>
+    <object>objects\obj_wasp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>

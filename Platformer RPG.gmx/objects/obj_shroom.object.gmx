@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_solid</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,31 @@
           <argument>
             <kind>1</kind>
             <string>script_physics()
+canHurt = true
+shroomDmg = 25
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm</string>
           </argument>
         </arguments>
       </action>
@@ -52,9 +76,10 @@
 GravityMovement()
 script_collision()
 if instance_exists(obj_Player) {
-    hsp = -sign(x - obj_Player.x) * 5
+    hsp = -sign(x - obj_Player.x) * 4
+    
 }
-if place_meeting(x,y+1, obj_solid){
+if place_meeting(x,y+1, obj_solid) {
     canJump = true
 }
 else{
@@ -62,6 +87,70 @@ else{
 }
 if place_meeting(x + hsp*7,y,obj_solid) &amp;&amp; canJump = true{
     vsp -= 7
+}
+if x + sign(hsp) = obj_Player.x || x + sign(hsp)*2 = obj_Player.x {
+    while x != obj_Player.x {
+        x += sign(hsp)
+    }
+    hsp = 0
+}
+//player collision
+if place_meeting(x + hsp,y, obj_Player){
+    while !place_meeting (x + sign(hsp),y,obj_Player){
+        x += sign(hsp)
+    }
+    
+    hsp = 0;
+}
+if place_meeting(x,y + vsp,obj_Player){
+    while !place_meeting (x, y + sign(vsp),obj_Player){
+        y += sign(vsp)
+    }
+    
+    vsp = 0;
+}
+if(place_meeting(x+hsp, y+vsp, obj_Player)) {
+    while(!place_meeting(x + sign(hsp), y + vsp, obj_Player)) {
+        x += sign(hsp);
+    }
+    
+    vsp = 0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Damage to Player
+if canHurt {
+    if(place_meeting(x + 1,y,obj_Player)){
+            global.health -= shroomDmg;
+            canHurt = false;
+            alarm[0] = room_speed;
+        }
+    if(place_meeting(x - 1,y,obj_Player)){
+            global.health -= shroomDmg;
+            canHurt = false;
+            alarm[0] = room_speed;
+        }
+}
+if alarm[0] &lt;= 0 {
+    canHurt = true
 }
 </string>
           </argument>

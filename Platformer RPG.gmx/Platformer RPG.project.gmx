@@ -26,10 +26,10 @@
   </scripts>
   <objects name="objects">
     <object>objects\Player_obj</object>
+    <object>objects\obj_shroom</object>
     <object>objects\obj_solid</object>
     <object>objects\healthpotion_obj</object>
     <object>objects\obj_Player</object>
-    <object>objects\obj_shroom</object>
     <object>objects\obj_bullet</object>
     <object>objects\shop_obj</object>
   </objects>

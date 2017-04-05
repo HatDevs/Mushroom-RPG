@@ -75,6 +75,8 @@ shroomHealth = 150
             <kind>1</kind>
             <string>///collision
 GravityMovement()
+script_playerCollide()
+
 
 if instance_exists(obj_Player) {
     hsp = -sign(x - obj_Player.x) * 1.5
@@ -95,7 +97,9 @@ if abs(x - obj_Player.x) &lt;= 1  {
     //}
     hsp = 0
 }
+
 //player collision
+<<<<<<< HEAD
 if place_meeting(x + hsp,y, obj_Player){
     while !place_meeting (x + sign(hsp),y,obj_Player){
         x += sign(hsp)
@@ -118,8 +122,16 @@ if(place_meeting(x+hsp, y+vsp, obj_Player)) {
     vsp = 0
 }
 if shroomHealth &lt;= 0
+=======
+
+if place_meeting(x, y, obj_bullet)
+    Health -= obj_Player.bullet_damage
+if Health &lt;= 0
+>>>>>>> origin/master
     instance_destroy()
+    
 script_collision()
+
 </string>
           </argument>
         </arguments>
@@ -143,12 +155,20 @@ script_collision()
             <string>///Damage to Player
 if canHurt {
     if(place_meeting(x + 1,y,obj_Player)){
+<<<<<<< HEAD
             PlayerStats_obj.Health -= shroomDmg;
+=======
+            global.health -= Damage;
+>>>>>>> origin/master
             canHurt = false;
             alarm[0] = room_speed;
         }
     if(place_meeting(x - 1,y,obj_Player)){
+<<<<<<< HEAD
             PlayerStats_obj.Health -= shroomDmg;
+=======
+            global.health -= Damage;
+>>>>>>> origin/master
             canHurt = false;
             alarm[0] = room_speed;
         }
@@ -156,6 +176,7 @@ if canHurt {
 if alarm[0] &lt;= 0 {
     canHurt = true
 }
+
 </string>
           </argument>
         </arguments>

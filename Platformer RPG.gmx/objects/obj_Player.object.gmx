@@ -31,7 +31,30 @@ jumpSpeed = -7.5
 bullet_damage = 35
 canHurt = false
 enemyCollide = true
+falling = false
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm</string>
           </argument>
         </arguments>
       </action>
@@ -121,25 +144,18 @@ if global.health &lt;= 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///All Knockback
-if place_meeting(x,y+1,enemy_obj) {
-    
-    with enemy_obj{
-        if alarm[0] &gt; 0{
-            canHurt = false
-        }
-    }
-    canHurt = true
+            <string>///Head Jumping and Wasp Falling
+if place_meeting(x,y+1,enemy_obj) &amp;&amp; enemyCollide = true {
     vsp -= 5
+    falling = true
 }
-if canHurt = true {
-    if y &lt; enemy_obj.y {
-        with enemy_obj{
-            Health -= 50
-        }
-        canHurt = false
+if falling {
+    with obj_wasp {
+        vsp += 10
     }
 }
+
+
 </string>
           </argument>
         </arguments>

@@ -79,7 +79,7 @@ hsp = movex
 vsp = movey
 if movex != 0 || movey != 0 {
     steps++
-    if random_range(0, 100) &lt; 5 &amp;&amp; steps &gt;= 300 {
+    if random_range(0, 100) &lt; 0.5 &amp;&amp; steps &gt;= 280 {
         script_enter_battle()
         steps = 0
     }

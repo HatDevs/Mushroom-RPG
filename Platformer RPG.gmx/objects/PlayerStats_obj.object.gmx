@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>Health = 100
-Gold = 100
+Gold = 0
+MaxHealth = 100
 </string>
           </argument>
         </arguments>

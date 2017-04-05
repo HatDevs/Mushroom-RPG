@@ -28,7 +28,7 @@
             <string>script_physics()
 canHurt = true
 shroomDmg = 25
-shroomHealth = 100
+shroomHealth = 150
 </string>
           </argument>
         </arguments>
@@ -77,7 +77,7 @@ shroomHealth = 100
 GravityMovement()
 
 if instance_exists(obj_Player) {
-    hsp = -sign(x - obj_Player.x) * 2
+    hsp = -sign(x - obj_Player.x) * 1.5
     
 }
 if place_meeting(x,y+1, obj_solid) {
@@ -117,8 +117,6 @@ if(place_meeting(x+hsp, y+vsp, obj_Player)) {
     
     vsp = 0
 }
-if place_meeting(x, y, obj_bullet)
-    shroomHealth -= obj_Player.bullet_damage
 if shroomHealth &lt;= 0
     instance_destroy()
 script_collision()
@@ -158,6 +156,32 @@ if canHurt {
 if alarm[0] &lt;= 0 {
     canHurt = true
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Health Bar
+draw_self()
+red = make_colour_rgb(1, 0, 0)
+draw_rectangle_colour(x - 10, y - 20, x - 10 + shroomHealth / 7.5, y - 12, 1, 0, 0, 1, false)
 </string>
           </argument>
         </arguments>

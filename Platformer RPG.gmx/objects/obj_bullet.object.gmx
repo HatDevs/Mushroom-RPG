@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if abs(abs(obj_Player.x) - abs(x)) &gt; 150 || place_meeting(x, y, enemy_obj)
+            <string>if place_meeting(x, y, enemy_obj) {
+    with enemy_obj {
+        if place_meeting(x, y, other.id)
+            shroomHealth -= other.damage
+    }
+}
+if abs(abs(obj_Player.x) - abs(x)) &gt; 150 || place_meeting(x, y, enemy_obj)
     instance_destroy()
 </string>
           </argument>
@@ -33,7 +39,7 @@
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -44,8 +50,5 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>16,16</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

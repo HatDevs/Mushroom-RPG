@@ -26,6 +26,7 @@
     <script>scripts\script_enter_battle.gml</script>
     <script>scripts\GravityMovement.gml</script>
     <script>scripts\TextboxLeave.gml</script>
+    <script>scripts\UseItem.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Player_obj</object>
@@ -47,6 +48,8 @@
     <room>rooms\wasp_room</room>
     <room>rooms\golem_room</room>
     <room>rooms\mushroom1_room</room>
+    <room>rooms\mushroom2_room</room>
+    <room>rooms\mushroom3_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

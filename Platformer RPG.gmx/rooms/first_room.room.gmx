@@ -350,7 +350,6 @@
     <instance objName="obj_solid" x="1216" y="320" name="inst_884450CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="1472" y="1568" name="inst_45A72A63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="shop_obj" x="1120" y="928" name="inst_49AC6CA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="shop_obj" x="960" y="1728" name="inst_968C52FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Inventory_obj" x="0" y="2016" name="inst_3FE0483F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="PlayerStats_obj" x="32" y="2016" name="inst_47327063" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

@@ -14,11 +14,6 @@
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\female_base_spr</sprite>
     <sprite>sprites\male_base_spr</sprite>
-    <sprite>sprites\solid_spr</sprite>
-    <sprite>sprites\solid_upper_spr</sprite>
-    <sprite>sprites\solid_bottom_spr</sprite>
-    <sprite>sprites\solid_bottom_right</sprite>
-    <sprite>sprites\solid_bottom_left</sprite>
     <sprite>sprites\healthpotion_spr</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_wall</sprite>
@@ -27,6 +22,14 @@
     <sprite>sprites\textbox_spr</sprite>
     <sprite>sprites\PlayerMenu_spr</sprite>
     <sprite>sprites\spr_wasp</sprite>
+    <sprites name="Solid">
+      <sprite>sprites\solid_upper_spr</sprite>
+      <sprite>sprites\solid_spr</sprite>
+      <sprite>sprites\solid_bottom_spr</sprite>
+      <sprite>sprites\solid_bottom_left</sprite>
+      <sprite>sprites\solid_bottom_right</sprite>
+    </sprites>
+    <sprite>sprites\sprite16</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>

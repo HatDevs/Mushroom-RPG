@@ -12,7 +12,13 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
+    <sprite>sprites\female_base_spr</sprite>
+    <sprite>sprites\male_base_spr</sprite>
     <sprite>sprites\solid_spr</sprite>
+    <sprite>sprites\solid_upper_spr</sprite>
+    <sprite>sprites\solid_bottom_spr</sprite>
+    <sprite>sprites\solid_bottom_right</sprite>
+    <sprite>sprites\solid_bottom_left</sprite>
     <sprite>sprites\healthpotion_spr</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_wall</sprite>
@@ -41,7 +47,6 @@
   <objects name="objects">
     <object>objects\Player_obj</object>
     <object>objects\obj_shroom</object>
-    <object>objects\obj_solid</object>
     <object>objects\healthpotion_obj</object>
     <object>objects\obj_Player</object>
     <object>objects\obj_bullet</object>
@@ -53,6 +58,13 @@
     <object>objects\PlayerStats_obj</object>
     <object>objects\PlayerLastPlace_obj</object>
     <object>objects\obj_wasp</object>
+    <objects name="Solid">
+      <object>objects\solid_bottom_left_obj</object>
+      <object>objects\solid_bottom_right_obj</object>
+      <object>objects\solid_obj_bottom</object>
+      <object>objects\obj_solid</object>
+      <object>objects\solid_upper_obj</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>

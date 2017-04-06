@@ -28,13 +28,14 @@
             <string>script_physics()
 moveSpeed = 5
 jumpSpeed = -7
-bullet_damage = 35
+bullet_damage = 30
 canHurt = false
 enemyCollide = true
 falling = false
 can_shoot = true
 xknockback = 0
 yknockback = 0
+jump_damage = 20
 </string>
           </argument>
         </arguments>
@@ -103,8 +104,14 @@ yknockback = 0
           <argument>
             <kind>1</kind>
             <string>///All Knockback
-if place_meeting(x,y-vsp,obj_shroom) {
+if place_meeting(x,y + vsp,enemy_obj) {
+    with enemy_obj {
+        if place_meeting(x, y - other.vsp, other.id) {
+            HurtEnemy(other.jump_damage)
+        }
+    }
     canHurt = false
+    
     vsp = -5
 }
 </string>
@@ -128,14 +135,10 @@ if place_meeting(x,y-vsp,obj_shroom) {
           <argument>
             <kind>1</kind>
             <string>///Movement and Collision
-
-if place_meeting(x,y+1,obj_solid) {
-    vsp = jump * jumpSpeed + yknockback
-}
 if mouse_check_button_released(mb_left) &amp;&amp; can_shoot {
     bullet = instance_create(x, y, obj_bullet)
     bullet.speed = 4 + chargetime / 5
-    bullet.damage = 30 + chargetime / 1.35
+    bullet.damage = bullet_damage + chargetime * 1.5
     bullet.direction = point_direction(x,y,mouse_x,mouse_y)
     bullet.image_angle = bullet.direction
     xknockback = -cos(bullet.direction * pi / 180) * (chargetime / 3)
@@ -144,7 +147,6 @@ if mouse_check_button_released(mb_left) &amp;&amp; can_shoot {
         xknockback = 0
     if abs(yknockback) &lt; 2.5
         yknockback = 0
-    vsp = yknockback
     can_shoot = false
     alarm[1] = 10
 }
@@ -156,6 +158,9 @@ left = -keyboard_check(ord('A'))
 right = keyboard_check(ord('D'))
 jump = keyboard_check(vk_space)
 hsp = (left + right) * moveSpeed + xknockback
+if place_meeting(x,y+1,obj_solid) {
+    vsp = jump * jumpSpeed + yknockback
+}
 if !instance_exists(enemy_obj) {
     room_goto(first_room)
     PlayerStats_obj.Gold += 30

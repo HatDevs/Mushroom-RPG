@@ -28,8 +28,7 @@
             <string>if place_meeting(x, y, enemy_obj) {
     with enemy_obj {
         if place_meeting(x, y, other.id) {
-            Health -= other.damage
-            audio_play_sound(enemy_hit, 10, false)
+            HurtEnemy(other.damage)
         }
         
     }

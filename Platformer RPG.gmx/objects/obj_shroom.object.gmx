@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>script_physics()
 canHurt = true
-shroomDmg = 25
-shroomHealth = 150
+shroomDmg = 18
+Health = 150
 </string>
           </argument>
         </arguments>
@@ -74,13 +74,8 @@ shroomHealth = 150
           <argument>
             <kind>1</kind>
             <string>///collision
-GravityMovement()
-script_playerCollide()
-
-
 if instance_exists(obj_Player) {
     hsp = -sign(x - obj_Player.x) * 1.5
-    
 }
 if place_meeting(x,y+1, obj_solid) {
     canJump = true
@@ -98,39 +93,13 @@ if abs(x - obj_Player.x) &lt;= 1  {
     hsp = 0
 }
 
-//player collision
-<<<<<<< HEAD
-if place_meeting(x + hsp,y, obj_Player){
-    while !place_meeting (x + sign(hsp),y,obj_Player){
-        x += sign(hsp)
-    }
-    
-    hsp = 0;
-}
-if place_meeting(x,y + vsp,obj_Player){
-    while !place_meeting (x, y + sign(vsp),obj_Player){
-        y += sign(vsp)
-    }
-    
-    vsp = 0;
-}
-if(place_meeting(x+hsp, y+vsp, obj_Player)) {
-    while(!place_meeting(x + sign(hsp), y + vsp, obj_Player)) {
-        x += sign(hsp);
-    }
-    
-    vsp = 0
-}
-if shroomHealth &lt;= 0
-=======
 
-if place_meeting(x, y, obj_bullet)
-    Health -= obj_Player.bullet_damage
 if Health &lt;= 0
->>>>>>> origin/master
     instance_destroy()
     
 script_collision()
+//script_playerCollide()
+GravityMovement()
 
 </string>
           </argument>
@@ -155,20 +124,14 @@ script_collision()
             <string>///Damage to Player
 if canHurt {
     if(place_meeting(x + 1,y,obj_Player)){
-<<<<<<< HEAD
             PlayerStats_obj.Health -= shroomDmg;
-=======
-            global.health -= Damage;
->>>>>>> origin/master
+            audio_play_sound(player_hit, 10, false)
             canHurt = false;
             alarm[0] = room_speed;
         }
     if(place_meeting(x - 1,y,obj_Player)){
-<<<<<<< HEAD
             PlayerStats_obj.Health -= shroomDmg;
-=======
-            global.health -= Damage;
->>>>>>> origin/master
+            audio_play_sound(player_hit, 10, false)
             canHurt = false;
             alarm[0] = room_speed;
         }
@@ -202,7 +165,7 @@ if alarm[0] &lt;= 0 {
             <string>///Health Bar
 draw_self()
 red = make_colour_rgb(1, 0, 0)
-draw_rectangle_colour(x - 10, y - 20, x - 10 + shroomHealth / 7.5, y - 12, 1, 0, 0, 1, false)
+draw_rectangle_colour(x - 10, y - 20, x - 10 + Health / 7.5, y - 12, 1, 0, 0, 1, false)
 </string>
           </argument>
         </arguments>

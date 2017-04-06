@@ -27,8 +27,11 @@
             <kind>1</kind>
             <string>if place_meeting(x, y, enemy_obj) {
     with enemy_obj {
-        if place_meeting(x, y, other.id)
-            shroomHealth -= other.damage
+        if place_meeting(x, y, other.id) {
+            Health -= other.damage
+            audio_play_sound(enemy_hit, 10, false)
+        }
+        
     }
 }
 if abs(abs(obj_Player.x) - abs(x)) &gt; 150 || place_meeting(x, y, enemy_obj)

@@ -30,7 +30,7 @@ vsp = 0
 Health = 100
 canHurt = true
 canMeet = true
-Damage = 25
+Damage = 20
 </string>
           </argument>
         </arguments>
@@ -119,7 +119,7 @@ if alarm[0] &lt;= 0 {
         enemyCollide = true
     }
     if place_meeting(x + sign(hsp), y+1, obj_Player){
-        global.health -= Damage
+        PlayerStats_obj.Health -= Damage
         alarm[0] = room_speed 
     }
 }

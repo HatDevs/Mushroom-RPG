@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\player_hit</sound>
+    <sound>sound\enemy_hit</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\solid_spr</sprite>
@@ -15,6 +18,7 @@
     <sprite>sprites\shop_spr</sprite>
     <sprite>sprites\textbox_spr</sprite>
     <sprite>sprites\PlayerMenu_spr</sprite>
+    <sprite>sprites\spr_wasp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>
@@ -27,6 +31,8 @@
     <script>scripts\GravityMovement.gml</script>
     <script>scripts\TextboxLeave.gml</script>
     <script>scripts\UseItem.gml</script>
+    <script>scripts\script_enemyCollide.gml</script>
+    <script>scripts\script_playerCollide.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Player_obj</object>
@@ -42,6 +48,7 @@
     <object>objects\PlayerMenu_obj</object>
     <object>objects\PlayerStats_obj</object>
     <object>objects\PlayerLastPlace_obj</object>
+    <object>objects\obj_wasp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\first_room</room>

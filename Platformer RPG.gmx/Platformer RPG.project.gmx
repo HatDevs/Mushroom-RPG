@@ -29,7 +29,6 @@
       <sprite>sprites\solid_bottom_left</sprite>
       <sprite>sprites\solid_bottom_right</sprite>
     </sprites>
-    <sprite>sprites\sprite16</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset_bgr</background>

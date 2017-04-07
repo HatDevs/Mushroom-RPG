@@ -26,32 +26,50 @@
           <argument>
             <kind>1</kind>
             <string>script_physics()
-canHurt = true
-shroomDmg = 18
-Health = 150
+EnemyInit(150, 18)
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
-        <id>605</id>
+        <id>601</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>alarm</string>
+            <kind>9</kind>
+            <script>script_collision</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -80,27 +98,19 @@ if instance_exists(obj_Player) {
 if place_meeting(x,y+1, obj_solid) {
     canJump = true
 }
-else{
+else {
     canJump = false
 }
 if place_meeting(x + hsp*7,y,obj_solid) &amp;&amp; canJump = true{
     vsp -= 10
 }
 if abs(x - obj_Player.x) &lt;= 1  {
-    //while x != obj_Player.x {
-    //    x += sign(hsp)
-    //}
     hsp = 0
 }
 
-
 if Health &lt;= 0
     instance_destroy()
-    
-script_collision()
-//script_playerCollide()
 GravityMovement()
-
 </string>
           </argument>
         </arguments>
@@ -122,22 +132,8 @@ GravityMovement()
           <argument>
             <kind>1</kind>
             <string>///Damage to Player
-if canHurt &amp;&amp; !place_meeting(x, y + 1, obj_Player) {
-    if(place_meeting(x + 1,y,obj_Player)){
-            PlayerStats_obj.Health -= shroomDmg;
-            audio_play_sound(player_hit, 10, false)
-            canHurt = false;
-            alarm[0] = room_speed;
-        }
-    if(place_meeting(x - 1,y,obj_Player)){
-            PlayerStats_obj.Health -= shroomDmg;
-            audio_play_sound(player_hit, 10, false)
-            canHurt = false;
-            alarm[0] = room_speed;
-        }
-}
-if alarm[0] &lt;= 0 {
-    canHurt = true
+if place_meeting(x, y, obj_Player) {
+    HurtPlayer(Damage)
 }
 
 </string>

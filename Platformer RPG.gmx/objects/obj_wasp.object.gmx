@@ -25,35 +25,53 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = 0
-vsp = 0
-Health = 100
+            <string>script_physics()
+EnemyInit(100, 20)
 canHurt = true
 canMeet = true
-Damage = 20
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
-        <id>605</id>
+        <id>601</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>alarm</string>
+            <kind>9</kind>
+            <script>script_collision</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -75,63 +93,22 @@ Damage = 20
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_playerCollide()
-script_collision()
-//script_playerCollide()
+            <string>///Movement + Death
 if instance_exists(obj_Player) {
     hsp = -sign(x - obj_Player.x) * 2
     vsp = -sign(y - obj_Player.y) * 2
     if abs(y - obj_Player.y) &lt;= 2  {
-    vsp = 0
+        vsp = 0
     }
     if abs(x - obj_Player.x) &lt;= 1  {
         hsp = 0
     }
 }
-
+if place_meeting(x, y, obj_Player){
+    HurtPlayer(Damage)
+}
 if Health &lt;= 0 
     instance_destroy()
-if place_meeting(x, y, obj_bullet)
-    Health -= obj_Player.bullet_damage
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Damage to Player
-if alarm[0] &lt;= 0 {
-    with obj_Player{
-        enemyCollide = true
-    }
-    if place_meeting(x + sign(hsp), y+1, obj_Player){
-        PlayerStats_obj.Health -= Damage
-        alarm[0] = room_speed 
-    }
-}
-else{
-    with obj_Player{
-        enemyCollide = false
-    }
-}
-//falling
-if place_meeting(x,y+1,obj_solid){
-    obj_Player.falling = false
-}
 </string>
           </argument>
         </arguments>

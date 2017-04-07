@@ -12,6 +12,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
+    <sprite>sprites\player_battle_spr</sprite>
     <sprite>sprites\female_base_spr</sprite>
     <sprite>sprites\male_base_spr</sprite>
     <sprite>sprites\healthpotion_spr</sprite>
@@ -35,21 +36,23 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script_collision.gml</script>
-    <script>scripts\script_physics.gml</script>
     <script>scripts\script_enter_battle.gml</script>
-    <script>scripts\GravityMovement.gml</script>
     <script>scripts\TextboxLeave.gml</script>
     <script>scripts\UseItem.gml</script>
-    <script>scripts\script_enemyCollide.gml</script>
-    <script>scripts\script_playerCollide.gml</script>
     <script>scripts\HurtEnemy.gml</script>
-    <script>scripts\script9.gml</script>
+    <script>scripts\EnemyInit.gml</script>
+    <script>scripts\HurtPlayer.gml</script>
+    <scripts name="Physics">
+      <script>scripts\script_physics.gml</script>
+      <script>scripts\script_collision.gml</script>
+      <script>scripts\script_enemyCollide.gml</script>
+      <script>scripts\script_playerCollide.gml</script>
+      <script>scripts\GravityMovement.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\Player_obj</object>
     <object>objects\obj_shroom</object>
-    <object>objects\healthpotion_obj</object>
     <object>objects\obj_Player</object>
     <object>objects\obj_bullet</object>
     <object>objects\shop_obj</object>
